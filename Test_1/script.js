@@ -181,21 +181,19 @@ let c = result1.length;
 // console.log(rs); ngebug 2 dikira 20
 
 let a = []
-
+let d = []
 let b = 0;
 
 while(b < c) {
-    a.push(result1[b])
-    let e = Math.min(a)
-    console.log(e);
-    
-    let d = 0;
-    
-    
+    a.push(result1[b]) 
     b++
 }
- 
+
+let e = Math.min(a)
 console.log(a);
+
+console.log(e);
+
 
 
 
