@@ -168,34 +168,34 @@ while(o < dl) {
         }
         p++;
     }
-    o++;
+    o++; 
 }
 
 result1 = data.filter(() => { return true})
-// console.log('after delete value duplicate = ' + result1);
+console.log('after delete value duplicate = ' + result1);
+let c = result1.length;
+
+
 
 // let rs = result1.sort();
 // console.log(rs); ngebug 2 dikira 20
 
-let a = 0;
-let b = result1.length;
-let f = []
+let a = []
 
-while(a < b) {
-    //    console.log('index ' + a + ' = ' + result1[a]);
-    let c = result1.filter(() => {return true})
-    let d = Math.min.apply(c)
-    let e = c.indexOf(d)
+let b = 0;
+
+while(b < c) {
+    a.push(result1[b])
+    let e = Math.min(a)
+    console.log(e);
     
-    f.push(c[e])
-    delete c[e]
-   
-    a++ 
+    let d = 0;
+    
+    
+    b++
 }
-console.log(f);
-
-
-
+ 
+console.log(a);
 
 
 
