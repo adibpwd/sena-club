@@ -1,0 +1,45 @@
+case 1 (string)
+hilih converter
+perintah: jika input yang dimasukkan "mana ada hewan berkaki tiga" semua huruf vocal di ganti "o"
+output: "mono odo howon borkoki togo"
+
+case 2 (array)
+Membandingkan nilai rudi dan ani
+rudi punya nilai:
+sejarah: 8
+matematika: 7
+sosiologi: 6
+kewarganegaran: 9
+
+ani punya nilai:
+sejarah: 5
+matematika: 8
+sosiologi: 9
+kewarganegaran: 6
+perintah: jika nilai salah satu murid lebih tinggi maka akan mendapatkan nilai 1
+output yang diharapkan:
+[rudi => 2, ani => 2];
+
+case 3 (string)
+Mengembalikan kata benar ketika membaca kata dari belakang maupun depan hasilnya sama
+ex case:
+kodok: dibaca dari depan kodok dibaca dari belakang kodok = benar
+kaca: dibaca dari depan kaca dibaca dari belakang acak = salah
+output yang diharapkan:
+input kodok output benar
+input kaca output salah
+
+case 4 (array & integer)
+menghapus nilai yang sama
+data: [23, 45, 67, 90, 23, 1, 6, 90, 12, 43, 90, 67]
+perintah: jika kita menemukan nilai yang sama maka hapus nilai tersebut dan sisakan satu nilai yang tersisa
+output yang diharapkan:
+[23, 45, 67, 90, 1, 6, 12, 43]
+
+case 5 (array & integer)
+mengurutkan dari nilai kecil ke nilai yang lebih besar dan menghapus nilai yang sama
+data: [4, 5, 8, 9, 0, 2, 8, 2, 11, 15, 2, 9, 0]
+perintah: jika kita menemukan nilai yang lebih kecil maka taruh nilai tersebut 
+di depan dan jika menemukan nilai yang sama hapus nilai tersebut
+output yang diharapkan:
+[0, 2, 4, 5, 8, 9, 11, 15]
