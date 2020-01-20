@@ -1,10 +1,17 @@
 bungkus1 = () => {
-
+    // // tempat input user
 // let input = 'sayang kamu orang purwodadi';
-// let input1 = [];
-// let aoi = input.length;   // amount of input 
-// let ita = input.split('');  // input to array
+
+    // // calculate amount of input 
+// let aoi = input.length;  
+
+    // // change input to array
+// let ita = input.split('');  
+
+    // // jika ada huruf vocal akan diganti dengan i
 // let vocal = ['a', 'i', 'u', 'e', 'o'];
+
+    // // tempat hasil proses mengganti huruf vocal ke huruf i
 // let result = [];
  
 
@@ -33,15 +40,19 @@ bungkus1 = () => {
 //     i++;
 // }
 
+   //  // output proses diatas keconsole
 // console.log(result.join(''));
 
 }
 
 bungkus2 = () => {
+    //  // nilai2 anggota
 // adib = [8, 8, 7, 2];
-// alin = [7, 2, 8, 3];
-// anya = [9, 9, 9, 9];
+// alin = [7, 2, 8, 2];
+// anya = [6, 6, 9, 2];
 
+    //  // nilai terbesar akan dapat 1 point jika sama 0 dan nilainya
+    //  // disimpan disini
 // nAdib = 0;
 // nAlin = 0;
 // nAnya = 0;
@@ -71,16 +82,21 @@ bungkus2 = () => {
 //     }
 //     k++;
 // }
-
+    
+    //  // output ke console dari proses diatas
 // console.log('nilai Adib = ' + nAdib);
 // console.log('nilai Alin = ' + nAlin);
 // console.log('nilai Anya = ' + nAnya);
 }
 
 bungkus3 = () => {
+    //  // tempat input user
 // let kata = 'malam';
-// let kta = kata.split(''); // kata to array
+    //  // change kata to array
+// let kta = kata.split('');
+    //  // calculate amount of kata
 // let kl = kata.length;
+    //  // tempat hasil
 // let result = [];
 
 // let l = 0;
@@ -98,8 +114,11 @@ bungkus3 = () => {
 }
 
 bungkus4 = () => {
+    //  // data dalam array
 // let data = [23, 45, 67, 90, 23, 1, 6, 90, 12, 43, 90, 67]
+   //  // calculate amount of data
 // let dl = data.length;
+   //  // tempat hasil
 // let rb4 = [];
 
 // let m = 0;
@@ -117,12 +136,14 @@ bungkus4 = () => {
 //    }
 //     m++;
 // }
-
+   
+    //  // mefilter data yang true
 // let hasilrb4 = data.filter(() => {return true})
+    //  // output proses diatas ke console
 // console.log(hasilrb4);
 }
 
-// bungkus5() = {  
+// bungkus5 = () => {  
 let data = [23, 45, 67, 90, 23, 1, 2, 90, 12, 43, 90, 67];
 let dl = data.length;
 let result = [];
@@ -178,4 +199,4 @@ console.log(f);
 
 
 
-// }
+//  }
