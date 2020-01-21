@@ -189,10 +189,21 @@ while(b < c) {
     b++
 }
 
-let e = Math.min(a)
-console.log(a);
+let g = 0;
+while (g < c) {
+    
+    let e = Math.min( ... a)
+    let f = a.indexOf(e)
+    
+    let h = a.length;
+    d.push(a[f])
+    a.splice(f,1)
 
-console.log(e);
+    g++
+}
+
+console.log(d);
+
 
 
 
