@@ -189,6 +189,7 @@ while(b < c) {
     b++
 }
 
+console.log('before sorted : ' + a.join(' '));
 let g = 0;
 while (g < c) {
     
@@ -202,7 +203,7 @@ while (g < c) {
     g++
 }
 
-console.log(d);
+console.log('after sorted : ' + d.join(' '));
 
 
 
