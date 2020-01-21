@@ -145,65 +145,36 @@ bungkus4 = () => {
 
 // bungkus5 = () => {  
 let data = [23, 45, 67, 90, 23, 1, 2, 90, 12, 43, 90, 67];
-let dl = data.length;
-let result = [];
+let dl = data.length;  // amount of data
+let result = [];    // tempat hasil penghapusan value duplikat
+
 let o = 0;
-// console.log('before delete value duplicate = ' + data);
-
-
 while(o < dl) {
-    let p = o + 1;
-    // console.log('while 1' + data);
-    while(p < dl) {
-        // console.log('while 2' + data);
-        
-        if (data[o] == data[p]) {
-            
-            console.log(data[p] + 'dihapus');
-            delete data[p];
-            // console.log('jumlah data' + dl);
-            
-            // data.splice(p)
-            
+    let p = o + 1;    //  buat index permulaan biar tidak memulai dari 0 terus
+        while(p < dl) {  
+            if (data[o] == data[p]) {             //  mencari value yang sama
+                console.log(data[p] + 'dihapus');            
+                data.splice(p, 1)                 //  jika sama tanpa basa basi akan dihapus
+            }
+            p++;
         }
-        p++;
-    }
     o++; 
 }
 
-result1 = data.filter(() => { return true})
-console.log('after delete value duplicate = ' + result1);
-let c = result1.length;
+console.log('after delete duplikat and before sorted : ' + data.join(' '));
+let aos = data.length;  // amount of data
+let resultEnd = []  //  penyimpanan hasil akhir dari pengurutan
 
-
-
-// let rs = result1.sort();
-// console.log(rs); ngebug 2 dikira 20
-
-let a = []
-let d = []
-let b = 0;
-
-while(b < c) {
-    a.push(result1[b]) 
-    b++
-}
-
-console.log('before sorted : ' + a.join(' '));
 let g = 0;
-while (g < c) {
-    
-    let e = Math.min( ... a)
-    let f = a.indexOf(e)
-    
-    let h = a.length;
-    d.push(a[f])
-    a.splice(f,1)
-
+while (g < aos) {
+    let e = Math.min( ... data)   //  mencari value terkecil
+    let f = data.indexOf(e)       //  mencari index dari value terkecil
+       resultEnd.push(data[f])    //  push nomer terkecil menggunakan indexnya ke dalam resultEnd
+       data.splice(f,1)           //  menghapus nomor terkecil didata supaya jika dicari nomor terkecil lagi bukan nomor sebelumnya lagi
     g++
 }
 
-console.log('after sorted : ' + d.join(' '));
+console.log('after sorted : ' + resultEnd.join(' '));
 
 
 
