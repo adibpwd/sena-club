@@ -4,7 +4,7 @@ perintah: jika input yang dimasukkan "mana ada hewan berkaki tiga" semua huruf v
 output: "mono odo howon borkoki togo"
 
 case 2 (array)
-Membandingkan nilai rudi dan ani
+Membandingkan nilai rudi dan ani 
 rudi punya nilai:
 sejarah: 8
 matematika: 7
