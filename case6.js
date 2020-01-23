@@ -11,33 +11,37 @@ let data = [
     ["1J", "2J", "3J", "4J", "5J", "6J", "7J", "8J", "9J", "10J"]
 ]
 
-let bookers = [
+let bookers = [ //  nomor kursi yang udah dibooking bookers
     ['4A'],
     ['5I'],
-    ['8I']
+    ['8B'],
+    ['4A']
 ]
 
-let result = []
-
 let a = 0;
-let b = bookers.length;
-
-
-
+let b = bookers.length;   //  jumlah bookers
 
 while(a < b) {
-    // let c = bookers[a][0];
-    let d = bookers[a].indexOf([2])
-    console.log(d);
-    
-  
-    
-    
+    let c = bookers[a][0];   //  mengambil value nomor kursi bookers
+     let d = 0;
+     while(d < data.length) {   
+         let e = 0;   
+         while(e < data[d].length) {
+             if(data[d][e] == 0) {
+                 console.log('kursi ' + c + ' sudah dipesan');   
+             }
+             
+             if(c == data[d][e]) {   //  jika ada nomor kursi sama dengan nomor kursi didata akan diganti 0
+                //    console.log(data[d][e]);
+                //    delete data[d][e]
+                data[d].splice(e, 1, 0)
+            }
+            
+            e++
+           }     
+        d++
+     } 
     a++
-    
 }
 
-
-console.log(data);
-
- 
+console.log(data); 
