@@ -1,41 +1,60 @@
-  // nilai2 anggota
-adib = [8, 8, 7, 2];
-alin = [7, 2, 8, 2];
-anya = [6, 6, 9, 2];
+button = () => { 
+
+// nilai2 anggota
+nama1a = [document.getElementById('nilai1a').value, document.getElementById('nilai1b').value,
+          document.getElementById('nilai1c').value, document.getElementById('nilai1d').value];
+
+nama2b = [document.getElementById('nilai2a').value, document.getElementById('nilai2b').value,
+          document.getElementById('nilai2c').value, document.getElementById('nilai2d').value];
+
+nama3c = [document.getElementById('nilai3a').value, document.getElementById('nilai3b').value,
+          document.getElementById('nilai3c').value, document.getElementById('nilai3d').value];
+
 
      // nilai terbesar akan dapat 1 point jika sama 0 dan nilainya
      // disimpan disini
-nAdib = 0;
-nAlin = 0;
-nAnya = 0;
+nama1 = 0;
+nama2 = 0;
+nama3 = 0;
 
 
 let k = 0;
-while (k < adib.length) {
-    if(adib[k] > alin[k]) {
-        if(adib[k] > anya[k]) {
-            nAdib++;
+while (k < nama1a.length) {
+    if(nama1a[k] > nama2b[k]) {
+        if(nama1a[k] > nama3c[k]) {
+            nama1++;
         }
 
-        if(anya[k] > adib[k]) {
-            nAnya++;
+        if(nama3c[k] > nama1a[k]) {
+            nama3++;         
         }
     }
 
-    if(alin[k] > adib[k]) {
-        if(alin[k] > anya[k]) {
-            nAlin++;
+    if(nama2b[k] > nama1a[k]) {
+        if(nama2b[k] > nama3c[k]) {
+            nama2++;
         }
 
-        if(anya[k] > alin[k]) {
-            nAnya++;
+        if(nama3c[k] > nama2b[k]) {
+            nama3++;
         }
 
     }
     k++;
 }
+document.getElementById('hasil').style.display = 'none';
+document.getElementById('loadGif').style.display = 'inline';
     
-     // output ke console dari proses diatas
-console.log('nilai Adib = ' + nAdib);
-console.log('nilai Alin = ' + nAlin);
-console.log('nilai Anya = ' + nAnya);
+setTimeout('hasil()', 2000)
+}
+
+hasil = () => {
+
+    document.getElementById('loadGif').style.display = 'none';
+         // output ke console dari proses diatas
+let hasil1 = document.getElementById('nama1').value + ' : ' + nama1;
+let hasil2 = document.getElementById('nama2').value + ' : ' + nama2;
+let hasil3 = document.getElementById('nama3').value + ' : ' + nama3;
+document.getElementById('hasil').innerHTML = hasil1 + '<br>' + hasil2 + '<br>' + hasil3;
+document.getElementById('hasil').style.display = 'inline';
+}

@@ -10,3 +10,43 @@
 #mm-tk {
     display: none
 }
+
+#input1 {
+    width: 1%;
+}
+
+#cat-nilai {
+    display: block;
+    width: 100px;
+}
+
+
+#table-nilai th {
+float: left;
+}
+
+#table-nilai input {
+    width: 90%;
+    text-align: center;
+}
+
+#loadGif {
+    width: 5%; 
+    display: none;
+}
+
+#delDup input {
+   width: 4%;
+   text-align: center;
+}
+
+#g-sama button {
+    padding: 5%;
+    margin: 1% 0.1%;
+    border: none;
+}
+}
+
+.jok {
+    color: red;
+}

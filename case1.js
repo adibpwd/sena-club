@@ -1,39 +1,43 @@
-// tempat input user
-let input = '';
+button = () => {
+ //  value yang akan diganti   
+    let input = document.getElementById('input').value;
 
-tombol = () => {
-    let isi = document.getElementById('input_form').value;
-}  //  cara bikin input dari form
-
-
-    // calculate amount of input 
+// calculate amount of input 
 let aoi = input.length;  
 
-    // change input to array
+// change input to array
 let ita = input.split('');  
 
-    // jika ada huruf vocal akan diganti dengan i
-let vocal = ['a', 'i', 'u', 'e', 'o'];
+// jika ada huruf vocal akan diganti dengan i
+let vocal = ['a', 'i', 'u', 'e', 'o', 'A', 'I', 'U', 'E', 'O'];
 
-    // tempat hasil proses mengganti huruf vocal ke huruf i
+// tempat hasil proses mengganti huruf vocal ke huruf i
 let result = [];
- 
+
+
+let input1 = document.getElementById('input1').value;
+
 let i = 0;
 while (i < aoi) {
-    
-    result.push(ita[i])
-     
-    let j = 0;
-      while (j < vocal.length) {
-          
-           if(vocal[j] == ita[i]) {               
-               result.splice(i);
-               result.push('o');
-            }
-        j++;
-    }
-    i++;
+
+result.push(ita[i])
+ 
+let j = 0;
+  while (j < vocal.length) {
+      
+       if(vocal[j] == ita[i]) {               
+           result.splice(i);
+           result.push(input1);
+        }
+    j++;
+}
+i++;
 }
 
-    // output proses diatas keconsole
+// output proses diatas keconsole
 console.log(result.join(''));
+}
+
+
+
+ 
