@@ -1,3 +1,16 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    margin: 1% 8%;
+ }
+
 #spin {
     margin: 166px 2px;
     position: fixed;
@@ -40,11 +53,15 @@ float: left;
    text-align: center;
 }
 
+
 #g-sama button {
-    padding: 5%;
-    margin: 1% 0.1%;
-    border: none;
+    font-size: 127px;
+    padding: 0% 5%;
+    margin: 1% 1%;
 }
+
+.bebas {
+    margin: 4% 1%;
 }
 
 .jok {
