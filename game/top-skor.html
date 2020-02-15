@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>top skor</title>
+</head>
+<body>
+     <div id="list">
+         
+     </div>
+</body>
+<script>
+  const listPlayer = JSON.parse(sessionStorage.getItem('player'));  // memanggil key player di session dan mengubahnya menjadi object
+  let topPlayer = []                   //  tempat nilai player
+
+  for(a = 0; a < listPlayer.length; a++) {               
+      topPlayer.push(listPlayer[a].nilai);  // push nilai dari players ke topPlayer
+  }
+
+  for(i = 0; i < listPlayer.length; i++) {
+
+      let bigNilai = Math.max(... topPlayer);            // mengambil nilai terbesar ditopPlayer
+      let indexBigNilai = topPlayer.indexOf(bigNilai);   // dan mencari indexnya
+      
+        let p = document.createElement('p');     
+        document.getElementById('list').appendChild(p)   // memasukan tag p ke div berclass list
+        //  menampilkan nama player dan skor dari topPlayer dengan indexBigNilai ( index dari nilai terbesar )
+        document.getElementsByTagName('p')[i].innerHTML = 'name player : ' + listPlayer[indexBigNilai].username + '<br> skor : ' + listPlayer[indexBigNilai].nilai; 
+      topPlayer.splice(indexBigNilai, 1, 0)             // mengganti value ditopPlayer dengan indexBigNilai terus dihapus dan diganti 0
+    }
+  
+
+</script>
+</html>
