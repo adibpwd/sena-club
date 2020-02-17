@@ -123,12 +123,19 @@ SELECT SUM(column1) FROM table_name;
  -- gabung table_name1 dan table_name2 ambilkan semuanya yang idnya sama aja
  -- gabung table_name1 dan table_name2 ambilkan semua value table_name1 untuk yang kanan ambilkan value table_name2 yang idnya sama dengan table_name1 jika ada yang tidak sama kasih value null
  -- kebalikannya left join
- /* full join mengambil semua value walaupun ada value yang tidak sama karna diganti dengan value null */ UNION /* type data, urutan dan jumlah column harus sama */
+ -- full join mengambil semua value walaupun ada value yang tidak sama karna diganti dengan value null // UNION // type data, urutan dan jumlah column harus sama
 SELECT * FROM table_name1 INNER JOIN table_name2 ON table_name1.id=table_name2.id; 
 SELECT * FROM table_name1 LEFT JOIN table_name2 ON table_name1.id=table_name2.id;
 SELECT * FROM table_name1 LEFT JOIN table_name2 ON table_name1.id=table_name2.id;
 SELECT * FROM users LEFT OUTER JOIN kelas ON users.kelas_id=kelas.id UNION SELECT * FROM users RIGHT OUTER JOIN kelas ON users.kelas_id=kelas.id;
 SELF JOIN skip
+
+
+-- ambilkan dan gabungin data yang sama dicolumn1 terus hitung per row ada ada berapa column2 // GROUP BY buat gabunging value yang sama satu column
+-- sama kayak diatas HAVING COUNT() buat ngambil data yang valuenya lebih dari 9
+SELECT column1, COUNT(column2) FROM table_name GROUP BY column1;
+SELECT column1, COUNT(column2) FROM table_name GROUP BY column1 HAVING COUNT(column2) > 9;
+
 
 SQL ANY ALL skip
 
@@ -144,10 +151,10 @@ IFNULL ISNULL COALESCE SKIP
 CREATE PROCEDURE SKIP
 
 -- membuat database baru
-CREATE DATABASE database_name;
+CREATE DATABASE databaseName;
 
 -- menghapus database_name
-DROP DATABASE database_name;
+DROP DATABASE databaseName;
 
 BACKUP DATABASE SKIP
 
@@ -170,9 +177,11 @@ TRUNCATE TABLE table_name;
 -- menambah column beserta datatype ditable_name
 -- menghapus column1 dari table_name
 -- mengubah column1 beserta datatype ditable_name
+-- EDIT column1 diname_table pindah kecolum paling depan
 ALTER TABLE table_name ADD column1 datatype;
 ALTER TABLE table_name DROP COLUMN column1;
-ALTER TABLE table_name ALTER COLUMN column1 datatype;
+ALTER TABLE table_name MODIFY COLUMN column1 datatype;
+ALTER TABLE name_table CHANGE column1 column1 INT not null FIRST;
 
 -- column tidak bisa bervalue NULL
 -- column harus berbeda semua
@@ -180,20 +189,42 @@ ALTER TABLE table_name ALTER COLUMN column1 datatype;
 -- untuk gabungin 2 table yang berhubungan sama key PRIMARY KEY ( orang tua ) dan FOREIGN KEY ( anak nya / cabangnya )
 -- column4 harus 20 keatas contoh ada diatas bagian CREATE TABLE
 -- set value default jika tidak ada value yang diINSERT
+-- index buat mempercepat pencarian dbnya itu sendiri jika kita mau inner join atau sekedar ambil value dbnya akan lebih cepat dibanding tanpa index tapi kalau sedang update value dbnya akan lama
+-- otomatis nambah 1 angka jika valuenya tidak diisi
+-- mirip bikin alias dicommand line di .bashrc
 NOT NULL
 UNIQUE
 PRIMARY KEY
 FOREIGN KEY
 CHECK          => ALTER TABLE table_name ADD column4 datatype CHECK ( column4 >= 20);
 DEFAULT        => ALTER TABLE table_name ALTER column1 SET DEFAULT 'Tanpa Nama';
-               =>ALTER TABLE table_name ALTER column1 DROP DEFAULT;
-INDEX
+               =>ALTER TABLE table_name ALTER column1 DROP DEFAULT; -- masih gagal
 
+INDEX          => CREATE INDEX index_name ON table_name(column2, column5);  -- buat index dengan nama index_name ditable_name dengan column2 dan column5
+               => ALTER TABLE table_name DROP INDEX index_name;  -- menghapus index
+AUTO INCREMENT
 
+DATE         - YYYY-MM-DD
+DATETIME     - YYYY-MM-DD HH:MI:SS
+TIMESTAMP    - sama DATETIME
+YEAR         - YYYY / YY
+
+VIEW         - CREATE VIEW orangPWD18 AS SELECT name FROM anggota WHERE city='purwodadi' AND AGE > 17;  -- buat VIEW baru
+             - CREATE OR REPLACE VIEW orangPWD18 AS SELECT name FROM anggota WHERE city='purwodadi' AND AGE >= 18; -- REPLACE / UPDATE VIEW yang sudah ada
+            -  DROP VIEW orangPWD18; menghapus view
+
+SQL INJECTION SKIP;
 
 
 -- Cara import file kemysql dari terminal
 SOURCE /home/adib-cs/file.sql
+
+
+
+
+
+
+
 
 
 
